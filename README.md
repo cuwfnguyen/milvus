@@ -48,7 +48,7 @@ milvus_service/
 ##API Usage
 - To insert data into the knowledge base, use the following curl command:
     ```bash
-  curl --location 'http://localhost:8181/knowledge/insert' \
+  curl --location 'http://host:8181/knowledge/insert' \
     --header 'Content-Type: application/json' \
     --data '{
         "content": [
@@ -57,7 +57,7 @@ milvus_service/
     }'
 - To search for data in the knowledge base, use the following curl command:
     ```bash
-  curl --location 'http://localhost:8181/knowledge/search' \
+  curl --location 'http://host:8181/knowledge/search' \
     --header 'Content-Type: application/json' \
     --data '{
         "content": "Open AI là gì",
