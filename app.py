@@ -86,6 +86,3 @@ start_worker()
 
 import atexit
 atexit.register(cleanup)
-
-if __name__ == "__main__":
-    app.run(host=os.getenv('host'), port=os.getenv('port'), debug=True)
