@@ -5,14 +5,14 @@ from pymilvus import connections, Collection
 from functools import lru_cache
 import threading
 import queue
-
-
+import logging.config
 
 app = Flask(__name__)
 embedding_queue = queue.Queue()
+logging.config.fileConfig('logging.config')
 
 connections.connect(host=os.getenv('milvus_host'), port=os.getenv('milvus_port'))
-collection = Collection('knowledge_base')
+collection = Collection(os.getenv('collection_name'))
 collection.load()
 
 @lru_cache(maxsize=1000)
@@ -57,7 +57,7 @@ def insert_document():
 def search_document():
     data = request.json
     content = data.get('content')
-    results = search_in_milvus(query = content, top_k = data.get('limit'))
+    results = search_in_milvus(query=content, top_k=data.get('limit'))
     response = []
     for hit in results:
         response.append({
@@ -68,9 +68,24 @@ def search_document():
         "response": response
     }), 200
 
-if __name__ == '__main__':
+worker_thread = None
+
+def start_worker():
+    global worker_thread
     worker_thread = threading.Thread(target=embedding_worker)
     worker_thread.start()
+
+def cleanup():
+    if worker_thread:
+        embedding_queue.put(None)
+        worker_thread.join()
+    collection.release()
+    connections.disconnect('default')
+
+start_worker()
+
+import atexit
+atexit.register(cleanup)
+
+if __name__ == "__main__":
     app.run(host=os.getenv('host'), port=os.getenv('port'), debug=True)
-
-
