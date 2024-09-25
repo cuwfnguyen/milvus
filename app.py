@@ -1,11 +1,13 @@
 import os
 from flask import Flask, request, jsonify
 from openai import OpenAI
-from pymilvus import connections, Collection
+from pymilvus import connections, Collection, WeightedRanker, AnnSearchRequest
 from functools import lru_cache
 import threading
 import queue
 import logging.config
+from langchain_milvus.utils.sparse import BM25SparseEmbedding
+import helps
 
 app = Flask(__name__)
 embedding_queue = queue.Queue()
@@ -13,7 +15,9 @@ logging.config.fileConfig('logging.config')
 
 connections.connect(host=os.getenv('milvus_host'), port=os.getenv('milvus_port'))
 collection = Collection(os.getenv('collection_name'))
-collection.load()
+
+def add_to_milvus(content):
+    embedding_queue.put(content)
 
 @lru_cache(maxsize=1000)
 def get_embedding(text):
@@ -21,29 +25,56 @@ def get_embedding(text):
     response = client.embeddings.create(input=text, model="text-embedding-3-small")
     return response.data[0].embedding
 
-def add_to_milvus(content):
-    embedding_queue.put(content)
+def get_sparse_embedding(content):
+    content = helps.preprocess(content)
+    sparse_embedding_func = BM25SparseEmbedding(corpus=[content])
+    return sparse_embedding_func.embed_documents([content])[0]
 
 def embedding_worker():
     while True:
         content = embedding_queue.get()
         if content is None:
             break
-        embedding = get_embedding(content)
-        collection.insert([{"content": content, "embedding_vector": embedding}])
+        entity = {
+            "dense_vector": get_embedding(content),
+            "sparse_vector": get_sparse_embedding(content),
+            "content": content,
+        }
+        collection.insert([entity])
+        collection.load()
         embedding_queue.task_done()
 
-def search_in_milvus(query, top_k=2):
-    query_embedding = get_embedding(query)
-    search_params = {"metric_type": "COSINE", "params": {"nprobe": 10}}
-    results = collection.search(
-        data=[query_embedding],
-        anns_field="embedding_vector",
-        param=search_params,
-        limit=top_k,
-        output_fields=["content"]
-    )
-    return results[0]
+def hybrid_search(query, weight, top_k = 3):
+    reqs = build_hybrid_search_params(query, top_k)
+    rerank = WeightedRanker(0.8, 0.2)
+    res = collection.hybrid_search(reqs,rerank,limit=top_k)
+    print(res)
+    return []
+
+def build_hybrid_search_params(query, top_k):
+    sparse_vector = get_sparse_embedding(query)
+    sparse_params = {
+        "data": sparse_vector,
+        "anns_field": "dense_vector",
+        "param": {
+            "metric_type": "IP"
+        },
+        "limit": top_k
+    }
+    request_1 = AnnSearchRequest(**sparse_params)
+
+    dense_vector = get_embedding(query)
+    dense_params = {
+        "data": dense_vector,
+        "anns_field": "posterVector",
+        "param": {
+            "metric_type": "COSINE"
+        },
+        "limit": top_k
+    }
+    request_2 = AnnSearchRequest(**dense_params)
+    reqs = [request_1, request_2]
+    return reqs
 
 @app.route('/knowledge/insert', methods=['POST'])
 def insert_document():
@@ -57,7 +88,7 @@ def insert_document():
 def search_document():
     data = request.json
     content = data.get('content')
-    results = search_in_milvus(query=content, top_k=data.get('limit'))
+    results = hybrid_search(query=content, weight=1, top_k=data.get('limit'))
     response = []
     for hit in results:
         response.append({
@@ -82,7 +113,9 @@ def cleanup():
     collection.release()
     connections.disconnect('default')
 
-start_worker()
+# import atexit
+# atexit.register(cleanup)
 
-import atexit
-atexit.register(cleanup)
+if __name__ == "__main__":
+    start_worker()
+    app.run(host=os.getenv('host'), port=os.getenv('port'), debug=True)

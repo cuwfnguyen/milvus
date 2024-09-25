@@ -2,3 +2,6 @@ Flask
 openai
 pymilvus
 gunicorn
+pyvi
+langchain-milvus
+pymilvus[model]
