@@ -1,4 +1,4 @@
-# Docker Milvus Setup and Running the Project
+# Milvus Setup and Running the Project
 
 ## Docker Milvus Installation
 
@@ -12,10 +12,10 @@ To install Milvus using Docker, follow the instructions below:
   ```bash
   docker-compose -f https://github.com/milvus-io/milvus/releases/download/v2.2.6/milvus-standalone-docker-compose.yml up -d
 
-##Install Attu DB Admin
+## Install Attu DB Admin
 https://github.com/zilliztech/attu
 
-##Project Structure
+## Project Structure
 
 ```plaintext
 milvus_service/
@@ -30,7 +30,7 @@ milvus_service/
 └── wsgi.py
 ```
 
-##Running this Project
+## Running this Project
 - Install project dependencies by running:
     ```bash
     pip install -r requirement.txt
@@ -44,7 +44,7 @@ milvus_service/
     ```bash
   kill -9 $(lsof -t -i:8181)
   
-##API Usage
+## API Usage
 - To insert data into the knowledge base, use the following curl command:
     ```bash
   curl --location 'http://host:8181/knowledge/insert' \
