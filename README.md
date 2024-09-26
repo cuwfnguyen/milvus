@@ -13,9 +13,7 @@ To install Milvus using Docker, follow the instructions below:
   docker-compose -f https://github.com/milvus-io/milvus/releases/download/v2.2.6/milvus-standalone-docker-compose.yml up -d
 
 ##Install Attu DB Admin
--   To install and run Attu, a DB admin interface for Milvus:
-    ```bash
-    docker run -p 8000:3000 -e HOST_URL=host:8181 -e MILVUS_URL=host:19530 zilliz/attu:latest
+https://github.com/zilliztech/attu
 
 ##Project Structure
 
@@ -25,6 +23,7 @@ milvus_service/
 ├── .gitignore
 ├── app.log
 ├── app.py
+├── helps.py
 ├── logging.config
 ├── README.md
 ├── requirements.txt
