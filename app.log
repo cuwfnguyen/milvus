@@ -50,3 +50,253 @@
 2024-09-25 18:12:50 - werkzeug - INFO -  * Debugger PIN: 144-293-736
 2024-09-25 18:13:09 - werkzeug - INFO - 127.0.0.1 - - [25/Sep/2024 18:13:09] "[35m[1mPOST /knowledge/search HTTP/1.1[0m" 500 -
 2024-09-25 18:19:38 - werkzeug - INFO -  * Detected change in 'D:\\Milvus Service\\app.py', reloading
+2024-09-26 09:26:55 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8181
+2024-09-26 09:26:55 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-26 09:26:55 - werkzeug - INFO -  * Restarting with stat
+2024-09-26 09:26:59 - werkzeug - WARNING -  * Debugger is active!
+2024-09-26 09:26:59 - werkzeug - INFO -  * Debugger PIN: 144-293-736
+2024-09-26 09:27:11 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 09:27:11] "POST /knowledge/insert HTTP/1.1" 200 -
+2024-09-26 09:27:50 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 09:27:50] "POST /knowledge/insert HTTP/1.1" 200 -
+2024-09-26 09:28:33 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 09:28:33] "[35m[1mPOST /knowledge/search HTTP/1.1[0m" 500 -
+2024-09-26 09:30:33 - werkzeug - INFO -  * Detected change in 'D:\\Milvus Service\\app.py', reloading
+2024-09-26 09:36:02 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8181
+2024-09-26 09:36:02 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-26 09:36:02 - werkzeug - INFO -  * Restarting with stat
+2024-09-26 09:36:06 - werkzeug - WARNING -  * Debugger is active!
+2024-09-26 09:36:06 - werkzeug - INFO -  * Debugger PIN: 144-293-736
+2024-09-26 09:36:09 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 09:36:09] "[31m[1mPOST /knowledge/search HTTP/1.1[0m" 400 -
+2024-09-26 09:36:25 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 09:36:25] "[35m[1mPOST /knowledge/search HTTP/1.1[0m" 500 -
+2024-09-26 09:37:31 - werkzeug - INFO -  * Detected change in 'D:\\Milvus Service\\app.py', reloading
+2024-09-26 09:37:42 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8181
+2024-09-26 09:37:42 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-26 09:37:42 - werkzeug - INFO -  * Restarting with stat
+2024-09-26 09:37:45 - werkzeug - WARNING -  * Debugger is active!
+2024-09-26 09:37:45 - werkzeug - INFO -  * Debugger PIN: 144-293-736
+2024-09-26 09:37:51 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 09:37:51] "[35m[1mPOST /knowledge/search HTTP/1.1[0m" 500 -
+2024-09-26 09:39:43 - werkzeug - INFO -  * Detected change in 'D:\\Milvus Service\\app.py', reloading
+2024-09-26 09:40:00 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8181
+2024-09-26 09:40:00 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-26 09:40:00 - werkzeug - INFO -  * Restarting with stat
+2024-09-26 09:40:03 - werkzeug - WARNING -  * Debugger is active!
+2024-09-26 09:40:04 - werkzeug - INFO -  * Debugger PIN: 144-293-736
+2024-09-26 09:40:05 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 09:40:05] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 09:57:04 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8181
+2024-09-26 09:57:04 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-26 09:57:04 - werkzeug - INFO -  * Restarting with stat
+2024-09-26 09:57:07 - werkzeug - WARNING -  * Debugger is active!
+2024-09-26 09:57:07 - werkzeug - INFO -  * Debugger PIN: 144-293-736
+2024-09-26 09:57:29 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 09:57:29] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 09:57:56 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 09:57:56] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 09:58:30 - werkzeug - INFO -  * Detected change in 'D:\\Milvus Service\\app.py', reloading
+2024-09-26 09:58:41 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8181
+2024-09-26 09:58:41 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-26 09:58:41 - werkzeug - INFO -  * Restarting with stat
+2024-09-26 09:58:44 - werkzeug - WARNING -  * Debugger is active!
+2024-09-26 09:58:44 - werkzeug - INFO -  * Debugger PIN: 144-293-736
+2024-09-26 09:58:46 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 09:58:46] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 09:59:38 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 09:59:38] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 10:01:52 - werkzeug - INFO -  * Detected change in 'D:\\Milvus Service\\app.py', reloading
+2024-09-26 10:02:02 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8181
+2024-09-26 10:02:02 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-26 10:02:02 - werkzeug - INFO -  * Restarting with stat
+2024-09-26 10:02:04 - werkzeug - WARNING -  * Debugger is active!
+2024-09-26 10:02:04 - werkzeug - INFO -  * Debugger PIN: 144-293-736
+2024-09-26 10:02:10 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 10:02:10] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 10:11:16 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 10:11:16] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 10:12:56 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 10:12:56] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 10:13:28 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 10:13:28] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 10:13:38 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 10:13:38] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 10:14:03 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 10:14:03] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 10:15:26 - werkzeug - INFO -  * Detected change in 'D:\\Milvus Service\\app.py', reloading
+2024-09-26 10:15:37 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8181
+2024-09-26 10:15:37 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-26 10:15:37 - werkzeug - INFO -  * Restarting with stat
+2024-09-26 10:15:39 - werkzeug - WARNING -  * Debugger is active!
+2024-09-26 10:15:39 - werkzeug - INFO -  * Debugger PIN: 144-293-736
+2024-09-26 10:15:43 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 10:15:43] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 10:15:55 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 10:15:55] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 10:16:10 - werkzeug - INFO -  * Detected change in 'D:\\Milvus Service\\app.py', reloading
+2024-09-26 10:16:47 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8181
+2024-09-26 10:16:47 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-26 10:16:47 - werkzeug - INFO -  * Restarting with stat
+2024-09-26 10:16:50 - werkzeug - WARNING -  * Debugger is active!
+2024-09-26 10:16:50 - werkzeug - INFO -  * Debugger PIN: 144-293-736
+2024-09-26 10:16:53 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 10:16:53] "POST /knowledge/insert HTTP/1.1" 200 -
+2024-09-26 10:17:24 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 10:17:24] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 10:18:08 - werkzeug - INFO -  * Detected change in 'D:\\Milvus Service\\app.py', reloading
+2024-09-26 10:18:17 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8181
+2024-09-26 10:18:17 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-26 10:18:17 - werkzeug - INFO -  * Restarting with stat
+2024-09-26 10:18:19 - werkzeug - WARNING -  * Debugger is active!
+2024-09-26 10:18:19 - werkzeug - INFO -  * Debugger PIN: 144-293-736
+2024-09-26 10:18:42 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 10:18:42] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 10:21:59 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 10:21:59] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 10:22:25 - werkzeug - INFO -  * Detected change in 'D:\\Milvus Service\\app.py', reloading
+2024-09-26 10:22:39 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8181
+2024-09-26 10:22:39 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-26 10:22:39 - werkzeug - INFO -  * Restarting with stat
+2024-09-26 10:22:42 - werkzeug - WARNING -  * Debugger is active!
+2024-09-26 10:22:42 - werkzeug - INFO -  * Debugger PIN: 144-293-736
+2024-09-26 10:22:52 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 10:22:52] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 10:23:03 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 10:23:03] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 10:23:13 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 10:23:13] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 10:23:45 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 10:23:45] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 10:23:55 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 10:23:55] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 10:26:11 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 10:26:11] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 10:31:41 - werkzeug - INFO -  * Detected change in 'D:\\Milvus Service\\app.py', reloading
+2024-09-26 10:35:25 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8181
+2024-09-26 10:35:25 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-26 10:35:25 - werkzeug - INFO -  * Restarting with stat
+2024-09-26 10:35:28 - werkzeug - WARNING -  * Debugger is active!
+2024-09-26 10:35:28 - werkzeug - INFO -  * Debugger PIN: 144-293-736
+2024-09-26 10:36:09 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 10:36:09] "[35m[1mPOST /knowledge/search HTTP/1.1[0m" 500 -
+2024-09-26 10:37:23 - werkzeug - INFO -  * Detected change in 'D:\\Milvus Service\\app.py', reloading
+2024-09-26 10:37:31 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8181
+2024-09-26 10:37:31 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-26 10:37:31 - werkzeug - INFO -  * Restarting with stat
+2024-09-26 10:37:34 - werkzeug - WARNING -  * Debugger is active!
+2024-09-26 10:37:34 - werkzeug - INFO -  * Debugger PIN: 144-293-736
+2024-09-26 10:37:36 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 10:37:36] "[35m[1mPOST /knowledge/search HTTP/1.1[0m" 500 -
+2024-09-26 10:39:33 - werkzeug - INFO -  * Detected change in 'D:\\Milvus Service\\app.py', reloading
+2024-09-26 10:39:41 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8181
+2024-09-26 10:39:41 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-26 10:39:41 - werkzeug - INFO -  * Restarting with stat
+2024-09-26 10:39:43 - werkzeug - WARNING -  * Debugger is active!
+2024-09-26 10:39:43 - werkzeug - INFO -  * Debugger PIN: 144-293-736
+2024-09-26 10:39:55 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 10:39:55] "[35m[1mPOST /knowledge/search HTTP/1.1[0m" 500 -
+2024-09-26 10:43:42 - werkzeug - INFO -  * Detected change in 'D:\\Milvus Service\\app.py', reloading
+2024-09-26 10:45:03 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8181
+2024-09-26 10:45:03 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-26 10:45:03 - werkzeug - INFO -  * Restarting with stat
+2024-09-26 10:45:05 - werkzeug - WARNING -  * Debugger is active!
+2024-09-26 10:45:05 - werkzeug - INFO -  * Debugger PIN: 144-293-736
+2024-09-26 10:45:10 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 10:45:10] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 10:45:51 - werkzeug - INFO -  * Detected change in 'D:\\Milvus Service\\app.py', reloading
+2024-09-26 10:46:02 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8181
+2024-09-26 10:46:02 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-26 10:46:02 - werkzeug - INFO -  * Restarting with stat
+2024-09-26 10:46:04 - werkzeug - WARNING -  * Debugger is active!
+2024-09-26 10:46:04 - werkzeug - INFO -  * Debugger PIN: 144-293-736
+2024-09-26 10:46:06 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 10:46:06] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 10:49:41 - werkzeug - INFO -  * Detected change in 'D:\\Autogen Studio\\venv\\Lib\\site-packages\\pymilvus\\client\\grpc_handler.py', reloading
+2024-09-26 10:49:56 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8181
+2024-09-26 10:49:56 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-26 10:49:56 - werkzeug - INFO -  * Restarting with stat
+2024-09-26 10:49:58 - werkzeug - WARNING -  * Debugger is active!
+2024-09-26 10:49:58 - werkzeug - INFO -  * Debugger PIN: 144-293-736
+2024-09-26 10:50:23 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 10:50:23] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 11:05:28 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8181
+2024-09-26 11:05:28 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-26 11:05:28 - werkzeug - INFO -  * Restarting with stat
+2024-09-26 11:05:31 - werkzeug - WARNING -  * Debugger is active!
+2024-09-26 11:05:31 - werkzeug - INFO -  * Debugger PIN: 144-293-736
+2024-09-26 11:05:37 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 11:05:37] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 11:10:33 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8181
+2024-09-26 11:10:33 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-26 11:10:33 - werkzeug - INFO -  * Restarting with stat
+2024-09-26 11:10:36 - werkzeug - WARNING -  * Debugger is active!
+2024-09-26 11:10:36 - werkzeug - INFO -  * Debugger PIN: 144-293-736
+2024-09-26 11:10:40 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 11:10:40] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 11:25:36 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 11:25:36] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 11:25:55 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 11:25:55] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 11:31:02 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 11:31:02] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 11:31:31 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 11:31:31] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 11:31:48 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 11:31:48] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 11:33:38 - werkzeug - INFO -  * Detected change in 'D:\\Milvus Service\\app.py', reloading
+2024-09-26 11:33:51 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8181
+2024-09-26 11:33:51 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-26 11:33:51 - werkzeug - INFO -  * Restarting with stat
+2024-09-26 11:33:54 - werkzeug - WARNING -  * Debugger is active!
+2024-09-26 11:33:54 - werkzeug - INFO -  * Debugger PIN: 144-293-736
+2024-09-26 11:34:13 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 11:34:13] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 11:39:33 - werkzeug - INFO -  * Detected change in 'D:\\Milvus Service\\app.py', reloading
+2024-09-26 11:43:20 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8181
+2024-09-26 11:43:20 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-26 11:43:20 - werkzeug - INFO -  * Restarting with stat
+2024-09-26 11:43:23 - werkzeug - WARNING -  * Debugger is active!
+2024-09-26 11:43:23 - werkzeug - INFO -  * Debugger PIN: 144-293-736
+2024-09-26 11:43:26 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 11:43:26] "[35m[1mPOST /knowledge/search HTTP/1.1[0m" 500 -
+2024-09-26 11:47:53 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 11:47:53] "[35m[1mPOST /knowledge/search HTTP/1.1[0m" 500 -
+2024-09-26 11:50:30 - werkzeug - INFO -  * Detected change in 'D:\\Milvus Service\\app.py', reloading
+2024-09-26 11:50:39 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8181
+2024-09-26 11:50:39 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-26 11:50:39 - werkzeug - INFO -  * Restarting with stat
+2024-09-26 11:50:41 - werkzeug - WARNING -  * Debugger is active!
+2024-09-26 11:50:41 - werkzeug - INFO -  * Debugger PIN: 144-293-736
+2024-09-26 11:50:55 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 11:50:55] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 11:54:11 - werkzeug - INFO -  * Detected change in 'D:\\Milvus Service\\app.py', reloading
+2024-09-26 11:55:52 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8181
+2024-09-26 11:55:52 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-26 11:55:52 - werkzeug - INFO -  * Restarting with stat
+2024-09-26 11:55:55 - werkzeug - WARNING -  * Debugger is active!
+2024-09-26 11:55:55 - werkzeug - INFO -  * Debugger PIN: 144-293-736
+2024-09-26 11:55:57 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 11:55:57] "[35m[1mPOST /knowledge/search HTTP/1.1[0m" 500 -
+2024-09-26 11:56:10 - werkzeug - INFO -  * Detected change in 'D:\\Milvus Service\\app.py', reloading
+2024-09-26 11:57:55 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8181
+2024-09-26 11:57:55 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-26 11:57:55 - werkzeug - INFO -  * Restarting with stat
+2024-09-26 11:57:58 - werkzeug - WARNING -  * Debugger is active!
+2024-09-26 11:57:58 - werkzeug - INFO -  * Debugger PIN: 144-293-736
+2024-09-26 11:57:59 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 11:57:59] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 11:59:09 - werkzeug - INFO -  * Detected change in 'D:\\Milvus Service\\app.py', reloading
+2024-09-26 11:59:51 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8181
+2024-09-26 11:59:51 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-26 11:59:51 - werkzeug - INFO -  * Restarting with stat
+2024-09-26 11:59:54 - werkzeug - WARNING -  * Debugger is active!
+2024-09-26 11:59:54 - werkzeug - INFO -  * Debugger PIN: 144-293-736
+2024-09-26 11:59:56 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 11:59:56] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 12:00:34 - werkzeug - INFO -  * Detected change in 'D:\\Milvus Service\\app.py', reloading
+2024-09-26 12:00:55 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8181
+2024-09-26 12:00:55 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-26 12:00:55 - werkzeug - INFO -  * Restarting with stat
+2024-09-26 12:00:58 - werkzeug - WARNING -  * Debugger is active!
+2024-09-26 12:00:58 - werkzeug - INFO -  * Debugger PIN: 144-293-736
+2024-09-26 12:00:59 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 12:00:59] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 12:05:23 - werkzeug - INFO -  * Detected change in 'D:\\Milvus Service\\app.py', reloading
+2024-09-26 12:05:32 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8181
+2024-09-26 12:05:32 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-26 12:05:32 - werkzeug - INFO -  * Restarting with stat
+2024-09-26 12:05:35 - werkzeug - WARNING -  * Debugger is active!
+2024-09-26 12:05:35 - werkzeug - INFO -  * Debugger PIN: 144-293-736
+2024-09-26 12:05:44 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 12:05:44] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 12:05:51 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 12:05:51] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 12:06:01 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 12:06:01] "[35m[1mPOST /knowledge/search HTTP/1.1[0m" 500 -
+2024-09-26 12:06:49 - werkzeug - INFO -  * Detected change in 'D:\\Milvus Service\\app.py', reloading
+2024-09-26 12:06:59 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://localhost:8181
+2024-09-26 12:06:59 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-09-26 12:06:59 - werkzeug - INFO -  * Restarting with stat
+2024-09-26 12:07:02 - werkzeug - WARNING -  * Debugger is active!
+2024-09-26 12:07:02 - werkzeug - INFO -  * Debugger PIN: 144-293-736
+2024-09-26 12:07:04 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 12:07:04] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 12:07:11 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 12:07:11] "[31m[1mPOST /knowledge/search HTTP/1.1[0m" 400 -
+2024-09-26 12:07:13 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 12:07:13] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 12:07:23 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 12:07:23] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 12:07:26 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 12:07:26] "POST /knowledge/search HTTP/1.1" 200 -

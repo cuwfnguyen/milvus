@@ -41,39 +41,43 @@ def embedding_worker():
             "content": content,
         }
         collection.insert([entity])
-        collection.load()
+        # collection.load()
         embedding_queue.task_done()
 
-def hybrid_search(query, weight, top_k = 3):
+def hybrid_search(data):
+    query = data.get('content')
+    weight = data.get('weight') if data.get('weight') else 1
+    top_k = data.get('limit') if data.get('limit') else 5
     reqs = build_hybrid_search_params(query, top_k)
-    rerank = WeightedRanker(0.8, 0.2)
-    res = collection.hybrid_search(reqs,rerank,limit=top_k)
-    print(res)
-    return []
+    rerank = WeightedRanker(weight, 1-weight)
+    res = collection.hybrid_search(reqs, rerank, limit=top_k, output_fields=["id","content"])
+    return res
 
 def build_hybrid_search_params(query, top_k):
     sparse_vector = get_sparse_embedding(query)
-    sparse_params = {
-        "data": sparse_vector,
-        "anns_field": "dense_vector",
+    search_param_0 = {
+        "data": [sparse_vector],
+        "anns_field": "sparse_vector",
         "param": {
-            "metric_type": "IP"
+            "metric_type": "IP",
+            "params": {}
         },
         "limit": top_k
     }
-    request_1 = AnnSearchRequest(**sparse_params)
+    request_1 = AnnSearchRequest(**search_param_0)
 
     dense_vector = get_embedding(query)
-    dense_params = {
-        "data": dense_vector,
-        "anns_field": "posterVector",
+    search_param_1 = {
+        "data": [dense_vector],
+        "anns_field": "dense_vector",
         "param": {
-            "metric_type": "COSINE"
+            "metric_type": "COSINE",
+            "params": {"ef": 250},
         },
         "limit": top_k
     }
-    request_2 = AnnSearchRequest(**dense_params)
-    reqs = [request_1, request_2]
+    request_2 = AnnSearchRequest(**search_param_1)
+    reqs = [request_2, request_1]
     return reqs
 
 @app.route('/knowledge/insert', methods=['POST'])
@@ -87,10 +91,9 @@ def insert_document():
 @app.route('/knowledge/search', methods=['POST'])
 def search_document():
     data = request.json
-    content = data.get('content')
-    results = hybrid_search(query=content, weight=1, top_k=data.get('limit'))
+    results = hybrid_search(data)
     response = []
-    for hit in results:
+    for hit in results[0]:
         response.append({
             'content': hit.entity.get('content'),
             'score': hit.distance
@@ -113,8 +116,8 @@ def cleanup():
     collection.release()
     connections.disconnect('default')
 
-# import atexit
-# atexit.register(cleanup)
+import atexit
+atexit.register(cleanup)
 
 if __name__ == "__main__":
     start_worker()
