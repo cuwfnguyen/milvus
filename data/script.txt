@@ -1,0 +1,24 @@
+CREATE TABLE products (
+    id VARCHAR(255) PRIMARY KEY,
+    alias VARCHAR(255),
+    page_id VARCHAR(255),
+    category_id INTEGER,
+    item_name TEXT,
+    item_id BIGINT,
+    description TEXT,
+    item_sku VARCHAR(255),
+    image TEXT,
+    min_price DECIMAL,
+    max_price DECIMAL,
+    last_updated TIMESTAMP
+);
+
+CREATE TABLE variations (
+    id SERIAL PRIMARY KEY,
+    product_id VARCHAR(255) REFERENCES products(id),
+    variation_name TEXT,
+    variation_sku VARCHAR(255),
+    variation_id BIGINT,
+    variation_price DECIMAL,
+    variation_stock INTEGER
+);

@@ -300,3 +300,7 @@
 2024-09-26 12:07:13 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 12:07:13] "POST /knowledge/search HTTP/1.1" 200 -
 2024-09-26 12:07:23 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 12:07:23] "POST /knowledge/search HTTP/1.1" 200 -
 2024-09-26 12:07:26 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 12:07:26] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 12:46:27 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 12:46:27] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 12:46:30 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 12:46:30] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 12:46:31 - werkzeug - INFO - 127.0.0.1 - - [26/Sep/2024 12:46:31] "POST /knowledge/search HTTP/1.1" 200 -
+2024-09-26 12:47:56 - werkzeug - INFO -  * Detected change in 'D:\\Milvus Service\\app.py', reloading

@@ -1,6 +1,5 @@
 Flask
 openai
-pymilvus
 gunicorn
 pyvi
 langchain-milvus

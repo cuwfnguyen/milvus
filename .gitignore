@@ -1,2 +1,4 @@
-.env
+/data/.env
+/data/script.txt
 /.idea/
+/source/app.log
