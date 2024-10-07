@@ -4,3 +4,4 @@ gunicorn
 pyvi
 langchain-milvus
 pymilvus[model]
+apscheduler

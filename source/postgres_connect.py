@@ -4,9 +4,6 @@ from psycopg2 import pool
 import os
 from psycopg2.extras import DictCursor
 import logging
-from tqdm import tqdm
-from base import get_embedding
-import random
 
 connection_pool = pool.ThreadedConnectionPool(
     1,
