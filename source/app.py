@@ -13,7 +13,7 @@ import postgres_connect
 
 app = Flask(__name__)
 embedding_queue = queue.Queue()
-MINUTES_UPDATE_PRODUCT_EMBEDDING = 1
+MINUTES_UPDATE_PRODUCT_EMBEDDING = 10
 
 connections.connect(host=os.getenv('milvus_host'), port=os.getenv('milvus_port'))
 collection_knowledge = Collection(os.getenv('collection_knowledge'))
