@@ -47,20 +47,32 @@ def embedding_knowledge():
         collection_knowledge.insert([entity])
         embedding_queue.task_done()
 
-def hybrid_search(data, collection):
+def collection_search(data, collection):
     query = data.get('content')
-    weight = data.get('weight') if data.get('weight') else 1
+    weight = float(data.get('weight')) if data.get('weight') else 1
     top_k = data.get('limit') if data.get('limit') else 5
-    reqs = build_hybrid_search_params(query, top_k)
-    rerank = WeightedRanker(weight, 1-weight)
-    if collection == 'collection_knowledge':
-        res = collection_knowledge.hybrid_search(reqs, rerank, limit=top_k, output_fields=["id","content"])
+    dense_vector = get_embedding(query)
+    if weight not in [0,1]:
+        sparse_vector = get_sparse_embedding(query)
+        reqs = build_hybrid_search_params(sparse_vector, dense_vector, top_k)
+        rerank = WeightedRanker(weight, 1-weight)
+        if collection == 'collection_knowledge':
+            res = collection_knowledge.hybrid_search(reqs, rerank, limit=top_k, output_fields=["id","content"])
+        else:
+            res = collection_product.hybrid_search(reqs, rerank, limit=top_k, output_fields=["product_id", "product_name"])
     else:
-        res = collection_product.hybrid_search(reqs, rerank, limit=top_k, output_fields=["product_id", "product_name"])
+        vector_search_params = {
+                "metric_type": "COSINE",
+                "params": {"ef": 400}
+        }
+        if collection == 'collection_knowledge':
+            res = collection_knowledge.search(data=[dense_vector], anns_field='dense_vector', param= vector_search_params, limit=top_k, output_fields=["id", "content"])
+        else:
+            res = collection_product.search(data=[dense_vector], anns_field='dense_vector', param= vector_search_params, limit=top_k, output_fields=["product_id", "product_name"])
     return res
 
-def build_hybrid_search_params(query, top_k):
-    sparse_vector = get_sparse_embedding(query)
+def build_hybrid_search_params(sparse_vector, dense_vector, top_k):
+
     search_param_0 = {
         "data": [sparse_vector],
         "anns_field": "sparse_vector",
@@ -72,7 +84,6 @@ def build_hybrid_search_params(query, top_k):
     }
     request_1 = AnnSearchRequest(**search_param_0)
 
-    dense_vector = get_embedding(query)
     search_param_1 = {
         "data": [dense_vector],
         "anns_field": "dense_vector",
@@ -97,7 +108,7 @@ def insert_document():
 @app.route('/knowledge/search', methods=['POST'])
 def search_document():
     data = request.json
-    results = hybrid_search(data, 'collection_knowledge')
+    results = collection_search(data, 'collection_knowledge')
     response = []
     for hit in results[0]:
         response.append({
@@ -130,24 +141,35 @@ def insert_embedding_product():
 @app.route('/product/search', methods=['POST'])
 def search_product():
     data = request.json
-    results = hybrid_search(data, 'collection_product')
+    results = collection_search(data, 'collection_product')
     product_ids = []
     for hit in results[0]:
-        if hit.distance > os.getenv('distant_product_search'):
+        if hit.distance > float(os.getenv('distant_product_search')):
             return jsonify({
                 "response": get_meta_data_product([hit.entity.get('product_id')])
             }), 200
-        product_ids.append(hit.entity.get('product_id'))
+        product_ids.append(int(hit.entity.get('product_id')))
     return jsonify({
         "response": get_meta_data_product(product_ids)
     }), 200
 
 def get_meta_data_product(product_ids):
     if len(product_ids) == 1:
-        query = f" select item_name, description from products where item_id = ({product_ids[0]}"
+        query = f" select item_name, description from products where item_id = {product_ids[0]}"
     else:
         product_ids_placeholder = ', '.join([str(p_id) for p_id in product_ids])
-        query = f"SELECT item_name, description FROM products WHERE item_id IN ({product_ids_placeholder})"
+        # query = f"SELECT item_name, description FROM products WHERE item_id IN ({product_ids_placeholder})"
+        query = f"""
+        WITH ordered_products AS (
+          SELECT item_name, description, 
+                 ARRAY_POSITION(ARRAY{product_ids}, item_id) AS order_index
+          FROM products
+          WHERE item_id IN ({product_ids_placeholder})
+        )
+        SELECT item_name, description
+        FROM ordered_products
+        ORDER BY order_index;
+        """
     data = postgres_connect.execute_query(query)
     return data
 
