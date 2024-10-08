@@ -40,17 +40,15 @@ def get_sparse_embedding(content):
 def embedding_knowledge():
     while True:
         content = embedding_queue.get()
-        logging.info("not data")
-        if content is None:
-            break
-        entity = {
-            "dense_vector": get_embedding(content),
-            "sparse_vector": get_sparse_embedding(content),
-            "content": content,
-        }
-        collection_knowledge.insert([entity])
-        logging.info("insert queue")
-        embedding_queue.task_done()
+        if content:
+            entity = {
+                "dense_vector": get_embedding(content),
+                "sparse_vector": get_sparse_embedding(content),
+                "content": content,
+            }
+            collection_knowledge.insert([entity])
+            logging.info("insert queue")
+            embedding_queue.task_done()
 
 def collection_search(data, collection):
     query = data.get('content')
