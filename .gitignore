@@ -2,3 +2,4 @@
 /data/script.txt
 /.idea/
 /source/app.log
+/source/__pycache__

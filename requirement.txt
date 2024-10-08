@@ -2,7 +2,7 @@ Flask
 openai
 gunicorn
 psycopg2-binary
-pip install kafka-python
+kafka-python
 pyvi
 langchain-milvus
 pymilvus[model]
