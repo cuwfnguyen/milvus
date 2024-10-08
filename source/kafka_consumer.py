@@ -79,4 +79,4 @@ def process_and_insert_data(data):
                 variation['variation_price'], variation['variation_stock']
             ))
 
-kafka_thread = threading.Thread(target=pare_data_consumer)
+kafka_thread = threading.Thread(target=pare_data_consumer, daemon=True)

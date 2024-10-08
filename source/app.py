@@ -10,10 +10,13 @@ from langchain_milvus.utils.sparse import BM25SparseEmbedding
 import helps
 from apscheduler.schedulers.background import BackgroundScheduler
 import postgres_connect
+import logging.config
+import logging
 
 app = Flask(__name__)
 embedding_queue = queue.Queue()
 MINUTES_UPDATE_PRODUCT_EMBEDDING = 10
+logging.config.fileConfig('logging.cfg')
 
 connections.connect(host=os.getenv('milvus_host'), port=os.getenv('milvus_port'))
 collection_knowledge = Collection(os.getenv('collection_knowledge'))
@@ -37,6 +40,7 @@ def get_sparse_embedding(content):
 def embedding_knowledge():
     while True:
         content = embedding_queue.get()
+        logging.info("not data")
         if content is None:
             break
         entity = {
@@ -45,6 +49,7 @@ def embedding_knowledge():
             "content": content,
         }
         collection_knowledge.insert([entity])
+        logging.info("insert queue")
         embedding_queue.task_done()
 
 def collection_search(data, collection):
@@ -175,5 +180,5 @@ def get_meta_data_product(product_ids):
 
 scheduler = BackgroundScheduler()
 scheduler.add_job(insert_embedding_product, 'interval', minutes=MINUTES_UPDATE_PRODUCT_EMBEDDING)
-embedding_knowledge_thread = threading.Thread(target=embedding_knowledge)
+embedding_knowledge_thread = threading.Thread(target=embedding_knowledge, daemon=True)
 
