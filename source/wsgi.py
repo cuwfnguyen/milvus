@@ -1,17 +1,22 @@
-from app import app, embedding_knowledge_thread, scheduler
-from kafka_consumer import kafka_thread
+from app import app, embedding_knowledge_thread
+from kafka_product_consumer import kafka_product_thread
+from kafka_config_consumer import kafka_config_thread
+from vector_database_consumer import vectordb_product_thread
 import logging
-from flask import g
 
-@app.before_request
+background_threads_started = False
+
 def start_background_threads():
-    try:
-        embedding_knowledge_thread.start()
-        kafka_thread.start()
-        scheduler.start()
-        g.background_threads_started = True
-    except Exception as e:
-        logging.info(f"Error starting threads: {str(e)}")
+    global background_threads_started
+    if not background_threads_started:
+        try:
+            embedding_knowledge_thread.start()
+            vectordb_product_thread.start()
+            kafka_product_thread.start()
+            kafka_config_thread.start()
+            background_threads_started = True
+            logging.info("Background threads started successfully")
+        except Exception as e:
+            logging.error(f"Error starting threads: {str(e)}")
 
-if __name__ == "__main__":
-    app.run(debug=True)
+start_background_threads()

@@ -1,9 +1,0 @@
-Flask
-openai
-gunicorn
-psycopg2-binary
-kafka-python
-pyvi
-langchain-milvus
-pymilvus[model]
-apscheduler
